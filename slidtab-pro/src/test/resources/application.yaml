@@ -1,0 +1,10 @@
+# 测试配置 — 无种子数据、无模拟模式
+# 每个测试自行创建所需数据
+device:
+  tcp:
+    enabled: false    # 测试时不启动真实 TCP 服务器
+  simulate-mode: false
+  scan-enable: false
+  register-enable: false
+  base-url:
+  actuator-id: test_device_01

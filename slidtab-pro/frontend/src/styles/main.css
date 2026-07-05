@@ -1,0 +1,137 @@
+:root {
+  --bc-bg: #f4f5f7;
+  --bc-primary: #00994d;
+  --bc-primary-dark: #007a3d;
+  --bc-text: #1f2329;
+  --bc-text-2: #646a73;
+  --bc-text-3: #8f959e;
+  --bc-border: #e5e6eb;
+  --bc-card: #ffffff;
+  --bc-tab-h: 56px;
+  --bc-header-h: 48px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', '微软雅黑', sans-serif;
+  background: var(--bc-bg);
+  color: var(--bc-text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+/* 通用页面容器：全宽适配手机屏幕 */
+.page-container {
+  padding: 12px 14px calc(var(--bc-tab-h) + var(--safe-bottom) + 16px);
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 14px;
+  color: var(--bc-text);
+}
+
+/* 通用卡片网格：移动端 2 列 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-card .stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.stat-card .stat-icon .app-icon,
+.stat-card .stat-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.stat-card .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--bc-text);
+}
+
+.stat-card .stat-label {
+  font-size: 12px;
+  color: var(--bc-text-3);
+}
+
+/* Element Plus 移动端微调 */
+.el-card {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+.el-card__header {
+  padding: 12px 14px !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.el-card__body {
+  padding: 14px !important;
+}
+
+.el-button {
+  border-radius: 8px;
+}
+
+.el-tag {
+  border-radius: 6px;
+}
+
+/* 隐藏滚动条但保留滚动 */
+.scroll-y {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-y::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,41 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: slidtab-pro
+  datasource:
+    url: jdbc:h2:mem:bookcabinet;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    com.slidtable.slidtab_pro: INFO
+    org.hibernate.SQL: WARN
+
+device:
+  # TCP 设备服务器（设备主动连接，仅保留此通道）
+  tcp:
+    enabled: true
+    host: 0.0.0.0
+    port: 5000
+    heartbeat-idle-seconds: 90
+    # 取件动作每步发送后等待设备执行的延时（毫秒）。
+    # 设备机械动作需足够时间完成，过短会被下一条指令打断。
+    # 调试时如发现设备"只晃动一下"，可调大到 6000/8000。
+    action-step-delay-ms: 4000
